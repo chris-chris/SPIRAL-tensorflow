@@ -1,13 +1,13 @@
 #!/bin/sh
-sudo apt-get install -y build-essential
-sudo apt-get install -y libjson-c-dev libgirepository1.0-dev libglib2.0-dev
-sudo apt-get install -y python2.7 autotools-dev intltool gettext libtool
+apt-get install -y build-essential
+apt-get install -y libjson-c-dev libgirepository1.0-dev libglib2.0-dev
+apt-get install -y python2.7 autotools-dev intltool gettext libtool
 
-sudo apt-get install -y git swig python-setuptools gettext g++
-sudo apt-get install -y python-dev python-numpy
-sudo apt-get install -y libgtk-3-dev python-gi-dev
-sudo apt-get install -y libpng-dev liblcms2-dev libjson-c-dev
-sudo apt-get install -y gir1.2-gtk-3.0 python-gi-cairo
+apt-get install -y git swig python-setuptools gettext g++
+apt-get install -y python-dev python-numpy
+apt-get install -y libgtk-3-dev python-gi-dev
+apt-get install -y libpng-dev liblcms2-dev libjson-c-dev
+apt-get install -y gir1.2-gtk-3.0 python-gi-cairo
 
 mkdir libs
 cd libs
@@ -18,7 +18,7 @@ if [ ! -d libmypaint ]; then
   mv libmypaint-1.3.0 libmypaint
   cd libmypaint
   ./configure
-  sudo make install
+  make install
   cd ..
 fi
 
@@ -28,8 +28,8 @@ if [ ! -d mypaint ]; then
   mv mypaint-1.2.1 mypaint
   cd mypaint
   scons
-  sudo scons install
+  scons install
   cd ..
 fi
 
-sudo ldconfig
+ldconfig
